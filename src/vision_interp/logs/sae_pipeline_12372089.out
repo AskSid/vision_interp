@@ -1,0 +1,104 @@
+==========================================
+SAE Pipeline
+Config: src/vision_interp/configs/TinierInceptionV1/sae_tinier_features6.yaml
+Training only: false
+==========================================
+Activating virtual environment...
+
+Step 1: Training SAE...
+Using device: cuda.
+Single training run configuration
+Training configuration:
+  sae_type: topk
+  expansion_factor: 8
+  l1_coeff: None
+  topk: 8
+  batch_size: 1024
+  lr: 5e-3
+  weight_decay: 1e-5
+  epochs: 1
+
+Loading activations from 13 files.
+
+Loaded 3200000 activation vectors of size 96.
+
+Training topk SAE on 96-dimensional activations.
+SAE will have 768 latents.
+
+Epoch 1/1:
+  Total Loss: 0.018008, Reconstruction Loss: 0.018008, L1 Loss: 0.022967, L0 Norm: 8.0, R2: 0.640, Fraction Alive: 1.000
+Saved SAE to src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/sae.pth
+
+SAE trained and saved to: src/vision_interp/models/TinierInceptionV1/tinier_features6_topk
+
+Step 2: Saving SAE activations...
+Loaded config from SAE directory: src/vision_interp/models/TinierInceptionV1/tinier_features6_topk
+Using device: cuda.
+Loading activations from 13 files.
+Loaded 3200000 model activations pre-SAE.
+Loaded SAE model from src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/sae.pth
+Processed batch 1 with input shape torch.Size([16384, 96]) and output shape torch.Size([16384, 768]).
+
+Saved complete mapping to src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/sae_activations.pt. 3200000 activations saved.
+
+Step 3: Generating feature activating examples...
+Running in feature mode
+Loaded config from: src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/config.yaml
+Using device: cuda.
+Loaded 50000 images.
+Loaded 3200000 samples for 768 SAE features.
+Created cache for 64 receptive fields.
+No relevant indices found for interval 3 (60-90% activation).
+No relevant indices found for interval 2 (30-60% activation).
+No relevant indices found for interval 1 (5-30% activation).
+No relevant indices found for interval 0 (0% activation).
+No relevant indices found for interval 3 (60-90% activation).
+No relevant indices found for interval 2 (30-60% activation).
+No relevant indices found for interval 1 (5-30% activation).
+Saved feature activation histogram to src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/feature_activation_histogram.png
+Feature activation statistics:
+  Mean activation count: 1684389.8
+  Median activation count: 1689108.5
+  Max activation count: 3200000.0
+  Min activation count: 0.0
+
+Step 4: Generating neuron activating examples...
+Running in neuron mode
+Loaded config from: src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/config.yaml
+Using device: cuda.
+Loaded 50000 images.
+Loading activations from 13 files.
+Loaded 3200000 samples for 96 model channels.
+Created cache for 64 receptive fields.
+Saved neuron activation histogram to src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/neuron_activation_histogram.png
+Neuron activation statistics:
+  Mean activation count: 412451.5
+  Median activation count: 420949.5
+  Max activation count: 605240.0
+  Min activation count: 114784.0
+
+Step 5: Analyzing SAE feature branch preferences...
+Analyzing SAE branches for: src/vision_interp/models/TinierInceptionV1/tinier_features6_topk
+Branch preference threshold: 0.5
+Layer: features.6
+SAE type: topk
+Expansion factor: 8
+TopK: 8
+Saved feature clusters to: src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/feature_branch_clusters.csv
+
+Branch Analysis Summary for features.6:
+Total features: 768
+Number of branches: 4
+
+Features per branch:
+  Branch 1: 195 features (25.4%)
+  Branch 2: 203 features (26.4%)
+  Branch 3: 202 features (26.3%)
+  Branch 4: 168 features (21.9%)
+
+Analysis completed successfully!
+
+==========================================
+Pipeline completed successfully!
+Results in: src/vision_interp/models/TinierInceptionV1/tinier_features6_topk
+==========================================

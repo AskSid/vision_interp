@@ -1,0 +1,63 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 12371291
+##  Job Name : sae-pipeline
+##  Nodelist : gpu2501
+##      CPUs : 1
+##  Mem/Node : 65536 MB
+## Directory : /oscar/data/epavlick/sboppana/vision_interp
+##   Job Started : Tue Aug 19 07:10:37 PM EDT 2025
+###############################################################################
+==========================================
+SAE Pipeline
+Config: src/vision_interp/configs/TinierInceptionV1/sae_tinier_features1.yaml
+Training only: false
+==========================================
+Activating virtual environment...
+
+Step 1: Training SAE...
+Using device: cuda.
+Single training run configuration
+Training configuration:
+  sae_type: topk
+  expansion_factor: 2
+  l1_coeff: None
+  topk: 4
+  batch_size: 1024
+  lr: 5e-3
+  weight_decay: 1e-5
+  epochs: 25
+
+Loading activations from 13 files.
+
+Loaded 51200000 activation vectors of size 40.
+
+Training topk SAE on 40-dimensional activations.
+SAE will have 80 latents.
+
+Epoch 1/25:
+  Total Loss: 0.069667, Reconstruction Loss: 0.069667, L1 Loss: 0.072690, L0 Norm: 4.0, R2: 0.660, Fraction Alive: 1.000
+Saved SAE to src/vision_interp/models/TinierInceptionV1/tinier_features1_topk/sae.pth
+Epoch 2/25:
+  Total Loss: 0.069239, Reconstruction Loss: 0.069239, L1 Loss: 0.069914, L0 Norm: 4.0, R2: 0.668, Fraction Alive: 1.000
+Saved SAE to src/vision_interp/models/TinierInceptionV1/tinier_features1_topk/sae.pth
+Epoch 3/25:
+  Total Loss: 0.069237, Reconstruction Loss: 0.069237, L1 Loss: 0.069895, L0 Norm: 4.0, R2: 0.668, Fraction Alive: 1.000
+Saved SAE to src/vision_interp/models/TinierInceptionV1/tinier_features1_topk/sae.pth
+Epoch 4/25:
+  Total Loss: 0.069235, Reconstruction Loss: 0.069235, L1 Loss: 0.069913, L0 Norm: 4.0, R2: 0.668, Fraction Alive: 1.000
+Saved SAE to src/vision_interp/models/TinierInceptionV1/tinier_features1_topk/sae.pth
+Epoch 5/25:
+  Total Loss: 0.069240, Reconstruction Loss: 0.069240, L1 Loss: 0.069931, L0 Norm: 4.0, R2: 0.668, Fraction Alive: 1.000
+Epoch 6/25:
+  Total Loss: 0.069237, Reconstruction Loss: 0.069237, L1 Loss: 0.069928, L0 Norm: 4.0, R2: 0.668, Fraction Alive: 1.000
+Epoch 7/25:
+  Total Loss: 0.069236, Reconstruction Loss: 0.069236, L1 Loss: 0.069905, L0 Norm: 4.0, R2: 0.668, Fraction Alive: 1.000
+Epoch 8/25:
+  Total Loss: 0.069238, Reconstruction Loss: 0.069238, L1 Loss: 0.069938, L0 Norm: 4.0, R2: 0.668, Fraction Alive: 1.000
+Epoch 9/25:
+  Total Loss: 0.069235, Reconstruction Loss: 0.069235, L1 Loss: 0.069909, L0 Norm: 4.0, R2: 0.668, Fraction Alive: 1.000
+Saved SAE to src/vision_interp/models/TinierInceptionV1/tinier_features1_topk/sae.pth
+Epoch 10/25:
+  Total Loss: 0.069235, Reconstruction Loss: 0.069235, L1 Loss: 0.069934, L0 Norm: 4.0, R2: 0.668, Fraction Alive: 1.000
+Epoch 11/25:
+  Total Loss: 0.069235, Reconstruction Loss: 0.069235, L1 Loss: 0.069891, L0 Norm: 4.0, R2: 0.668, Fraction Alive: 1.000

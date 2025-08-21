@@ -1,0 +1,162 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 12371294
+##  Job Name : sae-pipeline
+##  Nodelist : gpu2254
+##      CPUs : 1
+##  Mem/Node : 65536 MB
+## Directory : /oscar/data/epavlick/sboppana/vision_interp
+##   Job Started : Tue Aug 19 07:10:37 PM EDT 2025
+###############################################################################
+==========================================
+SAE Pipeline
+Config: src/vision_interp/configs/TinierInceptionV1/sae_tinier_features6.yaml
+Training only: false
+==========================================
+Activating virtual environment...
+
+Step 1: Training SAE...
+Using device: cuda.
+Single training run configuration
+Training configuration:
+  sae_type: topk
+  expansion_factor: 8
+  l1_coeff: None
+  topk: 8
+  batch_size: 1024
+  lr: 5e-3
+  weight_decay: 1e-5
+  epochs: 25
+
+Loading activations from 13 files.
+
+Loaded 3200000 activation vectors of size 96.
+
+Training topk SAE on 96-dimensional activations.
+SAE will have 768 latents.
+
+Epoch 1/25:
+  Total Loss: 0.018000, Reconstruction Loss: 0.018000, L1 Loss: 0.022964, L0 Norm: 8.0, R2: 0.640, Fraction Alive: 1.000
+Saved SAE to src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/sae.pth
+Epoch 2/25:
+  Total Loss: 0.016561, Reconstruction Loss: 0.016561, L1 Loss: 0.018280, L0 Norm: 8.0, R2: 0.757, Fraction Alive: 1.000
+Saved SAE to src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/sae.pth
+Epoch 3/25:
+  Total Loss: 0.016515, Reconstruction Loss: 0.016515, L1 Loss: 0.018272, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+Saved SAE to src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/sae.pth
+Epoch 4/25:
+  Total Loss: 0.016511, Reconstruction Loss: 0.016511, L1 Loss: 0.018312, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+Saved SAE to src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/sae.pth
+Epoch 5/25:
+  Total Loss: 0.016513, Reconstruction Loss: 0.016513, L1 Loss: 0.018465, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+Epoch 6/25:
+  Total Loss: 0.016502, Reconstruction Loss: 0.016502, L1 Loss: 0.018607, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+Saved SAE to src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/sae.pth
+Epoch 7/25:
+  Total Loss: 0.016500, Reconstruction Loss: 0.016500, L1 Loss: 0.018599, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+Saved SAE to src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/sae.pth
+Epoch 8/25:
+  Total Loss: 0.016499, Reconstruction Loss: 0.016499, L1 Loss: 0.018601, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+Saved SAE to src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/sae.pth
+Epoch 9/25:
+  Total Loss: 0.016498, Reconstruction Loss: 0.016498, L1 Loss: 0.018586, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+Saved SAE to src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/sae.pth
+Epoch 10/25:
+  Total Loss: 0.016500, Reconstruction Loss: 0.016500, L1 Loss: 0.018577, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+Epoch 11/25:
+  Total Loss: 0.016500, Reconstruction Loss: 0.016500, L1 Loss: 0.018581, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+Epoch 12/25:
+  Total Loss: 0.016500, Reconstruction Loss: 0.016500, L1 Loss: 0.018584, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+Epoch 13/25:
+  Total Loss: 0.016501, Reconstruction Loss: 0.016501, L1 Loss: 0.018584, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+Epoch 14/25:
+  Total Loss: 0.016497, Reconstruction Loss: 0.016497, L1 Loss: 0.018580, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+Saved SAE to src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/sae.pth
+Epoch 15/25:
+  Total Loss: 0.016498, Reconstruction Loss: 0.016498, L1 Loss: 0.018578, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+Epoch 16/25:
+  Total Loss: 0.016500, Reconstruction Loss: 0.016500, L1 Loss: 0.018582, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+Epoch 17/25:
+  Total Loss: 0.016498, Reconstruction Loss: 0.016498, L1 Loss: 0.018564, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+Epoch 18/25:
+  Total Loss: 0.016498, Reconstruction Loss: 0.016498, L1 Loss: 0.018595, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+Epoch 19/25:
+  Total Loss: 0.016498, Reconstruction Loss: 0.016498, L1 Loss: 0.018591, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+Epoch 20/25:
+  Total Loss: 0.016498, Reconstruction Loss: 0.016498, L1 Loss: 0.018594, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+Epoch 21/25:
+  Total Loss: 0.016499, Reconstruction Loss: 0.016499, L1 Loss: 0.018595, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+Epoch 22/25:
+  Total Loss: 0.016498, Reconstruction Loss: 0.016498, L1 Loss: 0.018575, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+Epoch 23/25:
+  Total Loss: 0.016498, Reconstruction Loss: 0.016498, L1 Loss: 0.018600, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+Epoch 24/25:
+  Total Loss: 0.016497, Reconstruction Loss: 0.016497, L1 Loss: 0.018584, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+Epoch 25/25:
+  Total Loss: 0.016500, Reconstruction Loss: 0.016500, L1 Loss: 0.018586, L0 Norm: 8.0, R2: 0.758, Fraction Alive: 1.000
+
+SAE trained and saved to: src/vision_interp/models/TinierInceptionV1/tinier_features6_topk
+
+Step 2: Saving SAE activations...
+Loaded config from SAE directory: src/vision_interp/models/TinierInceptionV1/tinier_features6_topk
+Using device: cuda.
+Loading activations from 13 files.
+Loaded 3200000 model activations pre-SAE.
+Loaded SAE model from src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/sae.pth
+Processed batch 1 with input shape torch.Size([16384, 96]) and output shape torch.Size([16384, 768]).
+
+Saved complete mapping to src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/sae_activations.pt. 3200000 activations saved.
+
+Step 3: Generating feature activating examples...
+Running in feature mode
+Loaded config from: src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/config.yaml
+Using device: cuda.
+Loaded 50000 images.
+Loaded 3200000 samples for 768 SAE features.
+Created cache for 64 receptive fields.
+Saved feature activation histogram to src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/feature_activation_histogram.png
+Feature activation statistics:
+  Mean activation count: 1701770.0
+  Median activation count: 1727781.0
+  Max activation count: 3196553.0
+  Min activation count: 9043.0
+
+Step 4: Generating neuron activating examples...
+Running in neuron mode
+Loaded config from: src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/config.yaml
+Using device: cuda.
+Loaded 50000 images.
+Loading activations from 13 files.
+Loaded 3200000 samples for 96 model channels.
+Created cache for 64 receptive fields.
+Saved neuron activation histogram to src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/neuron_activation_histogram.png
+Neuron activation statistics:
+  Mean activation count: 412451.5
+  Median activation count: 420949.5
+  Max activation count: 605240.0
+  Min activation count: 114784.0
+
+Step 5: Analyzing SAE feature branch preferences...
+Analyzing SAE branches for: src/vision_interp/models/TinierInceptionV1/tinier_features6_topk
+Branch preference threshold: 0.5
+Layer: features.6
+SAE type: topk
+Expansion factor: 8
+TopK: 8
+Saved feature clusters to: src/vision_interp/models/TinierInceptionV1/tinier_features6_topk/feature_branch_clusters.csv
+
+Branch Analysis Summary for features.6:
+Total features: 768
+Number of branches: 4
+
+Features per branch:
+  Branch 1: 202 features (26.3%)
+  Branch 2: 212 features (27.6%)
+  Branch 3: 194 features (25.3%)
+  Branch 4: 160 features (20.8%)
+
+Analysis completed successfully!
+
+==========================================
+Pipeline completed successfully!
+Results in: src/vision_interp/models/TinierInceptionV1/tinier_features6_topk
+==========================================

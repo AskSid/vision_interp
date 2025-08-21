@@ -1,0 +1,43 @@
+# Unified SAE Sweep Configuration
+# This config demonstrates how to perform hyperparameter sweeps with the unified system
+
+# Experiment metadata
+experiment_name: "sweep_features7"  # Name for this sweep experiment
+sae_name: "sweep_features7"  # Base name for SAE instances (will be extended with parameter values)
+
+# Vision model and dataset settings
+dataset: "cifar100"
+model_name: "TinyInceptionV1"
+layer_name: "features.7"
+
+# Data settings
+data_dir: "data/activations/vision_models/cifar100_TinyInceptionV1/features7"
+n_samples_per_image: 64
+
+# SAE model settings (these will be swept)
+sae_type: "vanilla"  # vanilla, batch_topk, topk
+expansion_factor: [2, 4, 8]  # Sweep over these values
+l1_coeff: [1e-2, 1e-1, 1e0]  # Sweep over these values
+topk: [2, 4, 6, 8, 16, 32]  # Sweep over these values
+
+# Training settings
+batch_size: 8192
+lr: 1e-5
+weight_decay: 1e-5
+epochs: 25
+
+# Processing settings (for activation saving)
+activation_batch_size: 16384
+num_workers: 4
+
+# Visualization settings (for activating examples)
+examples_per_interval: 4
+num_features_sampled: null  # null means use all features
+
+# Experiment settings
+seed: 42
+wandb: false
+
+# Directory structure (auto-managed)
+# This will create: models/sweep_test_experiment/sweep_test_sae_expansion_factor-4_l1_coeff-0.01_topk-4_lr-1e-05_ep-25_cifar100_TinyInceptionV1_features0/
+# And similar directories for each combination

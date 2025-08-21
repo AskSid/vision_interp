@@ -1,0 +1,19 @@
+# Vision Model Activation Saving Configuration
+dataset: "cifar100"
+model_name: "TinierInceptionV1"
+model_path: "src/vision_modeling/models/cifar100/best_cifar100_TinierInceptionV1_tinier_aug.pth"
+batch_size: 4096
+num_workers: 2
+
+# Layer names to extract activations from
+layer_names:
+  - "stem"
+  - "features.0"
+  - "features.1"
+  - "features.3"
+  - "features.4"
+  - "features.6"
+  - "features.7"
+
+# Output settings
+save_dir: "./data/activations/vision_models"

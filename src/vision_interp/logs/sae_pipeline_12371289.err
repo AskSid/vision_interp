@@ -1,0 +1,9 @@
+wandb: W&B API key is configured. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /oscar/data/epavlick/sboppana/vision_interp/wandb/run-20250819_191047-g28w7uvu
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run tinier_stem_topk
+wandb: ⭐️ View project at https://wandb.ai/siddharth_boppana-brown-university/cifar100-TinierInceptionV1-SAE
+wandb: 🚀 View run at https://wandb.ai/siddharth_boppana-brown-university/cifar100-TinierInceptionV1-SAE/runs/g28w7uvu
+Training epochs:   0%|          | 0/25 [00:00<?, ?it/s]Training epochs:   4%|▍         | 1/25 [03:47<1:31:00, 227.52s/it]Training epochs:   8%|▊         | 2/25 [07:35<1:27:16, 227.67s/it]Training epochs:  12%|█▏        | 3/25 [11:23<1:23:32, 227.84s/it]Training epochs:  16%|█▌        | 4/25 [15:12<1:19:57, 228.43s/it]Training epochs:  20%|██        | 5/25 [19:02<1:16:16, 228.84s/it]Training epochs:  24%|██▍       | 6/25 [22:51<1:12:30, 228.97s/it]Training epochs:  28%|██▊       | 7/25 [26:40<1:08:41, 228.95s/it]Training epochs:  32%|███▏      | 8/25 [30:29<1:04:55, 229.15s/it]Training epochs:  36%|███▌      | 9/25 [34:20<1:01:15, 229.70s/it]Training epochs:  40%|████      | 10/25 [38:10<57:26, 229.78s/it] Training epochs:  44%|████▍     | 11/25 [42:02<53:43, 230.22s/it]Training epochs:  48%|████▊     | 12/25 [45:53<49:59, 230.71s/it]Training epochs:  52%|█████▏    | 13/25 [49:42<46:01, 230.14s/it]Training epochs:  56%|█████▌    | 14/25 [53:33<42:12, 230.22s/it]Training epochs:  60%|██████    | 15/25 [57:23<38:21, 230.19s/it]slurmstepd: error: *** JOB 12371289 ON gpu2116 CANCELLED AT 2025-08-19T20:10:50 DUE TO TIME LIMIT ***

@@ -1,0 +1,57 @@
+# Unified SAE Configuration
+# This config contains all parameters needed for training, saving activations, and generating activating examples
+
+# Experiment metadata
+experiment_name: "features1_topk_updated"  # Name for this SAE experiment
+sae_name: "features1_topk_updated"  # Specific name for this SAE instance (auto-generated if not provided)
+
+# Vision model and dataset settings
+dataset: "cifar100"
+model_name: "TinyInceptionV1"
+layer_name: "features.1"
+
+# Data settings
+data_dir: "data/activations/vision_models/cifar100_TinyInceptionV1/features1"
+n_samples_per_image: null  # null means use all activations per image
+
+# SAE model settings
+sae_type: "topk"  # vanilla, batch_topk, topk
+expansion_factor: 8
+l1_coeff: null
+topk: 4
+
+# Training settings
+batch_size: 1024
+lr: 5e-3
+weight_decay: 1e-5
+epochs: 25
+
+# Processing settings (for activation saving)
+activation_batch_size: 16384
+num_workers: 4
+
+# Visualization settings (for activating examples)
+examples_per_interval: 4
+num_features_sampled: null  # null means use all features
+
+# Experiment settings
+seed: 42
+wandb: false
+
+# Directory settings
+models_dir: "models/TinyInceptionV1"
+
+# Directory structure (auto-managed)
+# These will be automatically set based on experiment_name and sae_name
+# models_dir: "src/vision_interp/models"  # Base models directory
+# sae_dir: "models/{experiment_name}/{sae_name}"  # Individual SAE directory
+# sae_weights_path: "sae_dir/sae.pth"  # SAE weights
+# sae_config_path: "sae_dir/config.yaml"  # This config saved with the SAE
+# activations_path: "sae_dir/sae_activations.pt"  # SAE activations
+# activating_examples_dir: "sae_dir/activating_examples"  # Visualizations
+
+# Sweep settings (optional - for hyperparameter sweeps)
+# If any of these are lists, a sweep will be performed
+# sweep_params:
+#   expansion_factor: [4, 8, 16]
+#   l1_coeff: [1e-2, 1e-1, 1e0]

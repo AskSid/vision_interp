@@ -1,0 +1,41 @@
+# Unified SAE Configuration for TinyInceptionV1 stem
+
+# Experiment metadata
+experiment_name: "tiny_stem_topk"
+sae_name: "tiny_stem_topk"
+
+# Vision model and dataset settings
+dataset: "cifar100"
+model_name: "TinyInceptionV1"
+layer_name: "stem"
+
+# Data settings
+data_dir: "data/activations/vision_models/cifar100_TinyInceptionV1/stem"
+n_samples_per_image: 1024
+
+# SAE model settings
+sae_type: "topk"  # vanilla, batch_topk, topk
+expansion_factor: 2
+l1_coeff: null
+topk: 4
+
+# Training settings
+batch_size: 1024
+lr: 5e-3
+weight_decay: 1e-5
+epochs: 25
+
+# Processing settings (for activation saving)
+activation_batch_size: 16384
+num_workers: 4
+
+# Visualization settings (for activating examples)
+examples_per_interval: 4
+num_features_sampled: null  # null means use all features
+
+# Experiment settings
+seed: 42
+wandb: false
+
+# Directory settings
+models_dir: "src/vision_interp/models/TinyInceptionV1"

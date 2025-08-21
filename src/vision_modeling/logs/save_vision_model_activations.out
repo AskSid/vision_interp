@@ -1,0 +1,70 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 12350531
+##  Job Name : save-vision-model-activations
+##  Nodelist : gpu2101
+##      CPUs : 1
+##  Mem/Node : 65536 MB
+## Directory : /oscar/data/epavlick/sboppana/vision_interp
+##   Job Started : Mon Aug 18 01:29:16 AM EDT 2025
+###############################################################################
+Starting vision model activation saving.
+Mon Aug 18 01:29:16 2025       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.129.03             Driver Version: 535.129.03   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA GeForce RTX 3090        On  | 00000000:E1:00.0 Off |                  N/A |
+| 30%   29C    P8              39W / 350W |     25MiB / 24576MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A     50185      G   /usr/libexec/Xorg                            17MiB |
++---------------------------------------------------------------------------------------+
+/oscar/data/epavlick/sboppana/vision_interp/.venv/lib/python3.13/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 2 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+Using device: cuda.
+
+Processing layer: stem
+  stem: torch.Size([4096, 32, 32, 32])
+  Processed 10 batches for stem...
+Completed layer: stem, saved to ./data/activations/vision_models/cifar100_TinyInceptionV1/stem/batch_12.pt
+
+Processing layer: features.0
+  features.0: torch.Size([4096, 56, 32, 32])
+  Processed 10 batches for features.0...
+Completed layer: features.0, saved to ./data/activations/vision_models/cifar100_TinyInceptionV1/features0/batch_12.pt
+
+Processing layer: features.1
+  features.1: torch.Size([4096, 56, 32, 32])
+  Processed 10 batches for features.1...
+Completed layer: features.1, saved to ./data/activations/vision_models/cifar100_TinyInceptionV1/features1/batch_12.pt
+
+Processing layer: features.3
+  features.3: torch.Size([4096, 86, 16, 16])
+  Processed 10 batches for features.3...
+Completed layer: features.3, saved to ./data/activations/vision_models/cifar100_TinyInceptionV1/features3/batch_12.pt
+
+Processing layer: features.4
+  features.4: torch.Size([4096, 104, 16, 16])
+  Processed 10 batches for features.4...
+Completed layer: features.4, saved to ./data/activations/vision_models/cifar100_TinyInceptionV1/features4/batch_12.pt
+
+Processing layer: features.6
+  features.6: torch.Size([4096, 136, 8, 8])
+  Processed 10 batches for features.6...
+Completed layer: features.6, saved to ./data/activations/vision_models/cifar100_TinyInceptionV1/features6/batch_12.pt
+
+Processing layer: features.7
+  features.7: torch.Size([4096, 150, 8, 8])
+  Processed 10 batches for features.7...
+Completed layer: features.7, saved to ./data/activations/vision_models/cifar100_TinyInceptionV1/features7/batch_12.pt
+
+Saved activations for all 7 layers.

@@ -1,0 +1,97 @@
+==========================================
+SAE Pipeline
+Config: src/vision_interp/configs/TinierInceptionV1/sae_tinier_features3.yaml
+Training only: false
+==========================================
+Activating virtual environment...
+
+Step 1: Training SAE...
+Using device: cuda.
+Single training run configuration
+Training configuration:
+  sae_type: topk
+  expansion_factor: 4
+  l1_coeff: None
+  topk: 6
+  batch_size: 1024
+  lr: 5e-3
+  weight_decay: 1e-5
+  epochs: 1
+
+Loading activations from 13 files.
+
+Loaded 12800000 activation vectors of size 61.
+
+Training topk SAE on 61-dimensional activations.
+SAE will have 244 latents.
+
+Epoch 1/1:
+  Total Loss: 0.050631, Reconstruction Loss: 0.050631, L1 Loss: 0.041010, L0 Norm: 6.0, R2: 0.701, Fraction Alive: 1.000
+Saved SAE to src/vision_interp/models/TinierInceptionV1/tinier_features3_topk/sae.pth
+
+SAE trained and saved to: src/vision_interp/models/TinierInceptionV1/tinier_features3_topk
+
+Step 2: Saving SAE activations...
+Loaded config from SAE directory: src/vision_interp/models/TinierInceptionV1/tinier_features3_topk
+Using device: cuda.
+Loading activations from 13 files.
+Loaded 12800000 model activations pre-SAE.
+Loaded SAE model from src/vision_interp/models/TinierInceptionV1/tinier_features3_topk/sae.pth
+Processed batch 1 with input shape torch.Size([16384, 61]) and output shape torch.Size([16384, 244]).
+
+Saved complete mapping to src/vision_interp/models/TinierInceptionV1/tinier_features3_topk/sae_activations.pt. 12800000 activations saved.
+
+Step 3: Generating feature activating examples...
+Running in feature mode
+Loaded config from: src/vision_interp/models/TinierInceptionV1/tinier_features3_topk/config.yaml
+Using device: cuda.
+Loaded 50000 images.
+Loaded 12800000 samples for 244 SAE features.
+Created cache for 256 receptive fields.
+Saved feature activation histogram to src/vision_interp/models/TinierInceptionV1/tinier_features3_topk/feature_activation_histogram.png
+Feature activation statistics:
+  Mean activation count: 5620184.6
+  Median activation count: 5168806.0
+  Max activation count: 12786500.0
+  Min activation count: 38954.0
+
+Step 4: Generating neuron activating examples...
+Running in neuron mode
+Loaded config from: src/vision_interp/models/TinierInceptionV1/tinier_features3_topk/config.yaml
+Using device: cuda.
+Loaded 50000 images.
+Loading activations from 13 files.
+Loaded 12800000 samples for 61 model channels.
+Created cache for 256 receptive fields.
+Saved neuron activation histogram to src/vision_interp/models/TinierInceptionV1/tinier_features3_topk/neuron_activation_histogram.png
+Neuron activation statistics:
+  Mean activation count: 2158758.4
+  Median activation count: 2177539.0
+  Max activation count: 2543395.0
+  Min activation count: 1421402.0
+
+Step 5: Analyzing SAE feature branch preferences...
+Analyzing SAE branches for: src/vision_interp/models/TinierInceptionV1/tinier_features3_topk
+Branch preference threshold: 0.5
+Layer: features.3
+SAE type: topk
+Expansion factor: 4
+TopK: 6
+Saved feature clusters to: src/vision_interp/models/TinierInceptionV1/tinier_features3_topk/feature_branch_clusters.csv
+
+Branch Analysis Summary for features.3:
+Total features: 244
+Number of branches: 4
+
+Features per branch:
+  Branch 1: 71 features (29.1%)
+  Branch 2: 71 features (29.1%)
+  Branch 3: 51 features (20.9%)
+  Branch 4: 51 features (20.9%)
+
+Analysis completed successfully!
+
+==========================================
+Pipeline completed successfully!
+Results in: src/vision_interp/models/TinierInceptionV1/tinier_features3_topk
+==========================================

@@ -1,0 +1,44 @@
+# Unified SAE Configuration for TinierInceptionV1 (single run example)
+
+# Experiment metadata
+experiment_name: "tinier_features1_topk"
+sae_name: "tinier_features1_topk"
+
+# Vision model and dataset settings
+dataset: "cifar100"
+model_name: "TinierInceptionV1"
+layer_name: "features.1"
+
+# Data settings
+data_dir: "data/activations/vision_models/cifar100_TinierInceptionV1/features1"
+n_samples_per_image: null  # null means use all activations per image
+
+# SAE model settings
+sae_type: "topk"  # vanilla, batch_topk, topk
+expansion_factor: 2
+l1_coeff: null
+topk: 4
+
+# Training settings
+batch_size: 1024
+lr: 5e-3
+weight_decay: 1e-5
+epochs: 1
+
+# Processing settings (for activation saving)
+activation_batch_size: 16384
+num_workers: 4
+
+# Visualization settings (for activating examples)
+examples_per_interval: 4
+num_features_sampled: null  # null means use all features
+
+# Experiment settings
+seed: 42
+wandb: true
+wandb_project: "cifar100-TinierInceptionV1-SAE"
+
+# Directory settings
+models_dir: "src/vision_interp/models/TinierInceptionV1"
+
+
