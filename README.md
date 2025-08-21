@@ -1,4 +1,4 @@
-# Vision Interpretability on Small Vision Models
+# Mechanistic Interpretability on Small Vision Models
 
 The goal for this repo is to fully decompose a ~66k InceptionV1-style model trained on CIFAR100.
 High level objectives for this project:
@@ -8,3 +8,4 @@ High level objectives for this project:
 - [x] - track neuron and feature attribution to different branches of an Inception block
 - [ ] - auto interp on visual features using vision-language models
 - [ ] - put together circuits from neurons/features across layers
+
